@@ -5,4 +5,5 @@ RUN apt-get -q update && apt-get -y upgrade && apt-get install -y git wget build
 WORKDIR /usr/src
 RUN git clone git://git.nordu.net/saml-md-tools.git && cd saml-md-tools && /usr/bin/autoreconf -is && ./configure --prefix=/usr/local && make && make install
 RUN easy_install --upgrade git+git://github.com/leifj/pyXMLSecurity.git#egg=pyXMLSecurity
+RUN easy_install -U requests
 WORKDIR /opt/swamid-metadata
